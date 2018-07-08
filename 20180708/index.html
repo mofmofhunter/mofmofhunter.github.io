@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+.box2{
+  background-color: #a728d7;}
+
+
+.box3{
+    background-color: #acc125;
+    width: 100px;
+    height: 100px;
+  }
+</style>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +20,42 @@
 </head>
 <body>
 <h1 class="first">こんにちは</h1>
+<button type="button" name="button" class="bt1">画像を表示</button>
+<h2 class="bt2">コンテンツを表示</h2>
+<h2 class="bt3">アニメーションさせる</h2>
+<div class="box3">ぼっくす３</div>
+<p class="box2">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+  ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>
+  <br>
+<img src="" alt="" class="img1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
 $(".first").css("color","#ff0000");
 $(".first").click(function(){
-  alert("クリックしたね");
+
+  $(this).css("color","#000000");
+  $(this).css("font-size","35px");
+  });
+
+  $(".bt1").click(function(){
+    $(".img1").attr("src","flower.jpg");
+  });
+
+  $(".bt2").click(function(){
+    $(".box2").slideToggle();
+  });
+
+  $(".bt3").click(function(){
+    $(".box3").animate({
+      marginLeft:"400px",
+      marginTop:"400px"
+    }
+  ,600,"swing").animate({
+    marginTop:"200px"
+  },500,"swing")
   });
 });
-
 </script>
 
 </body>
